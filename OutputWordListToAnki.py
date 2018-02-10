@@ -47,7 +47,7 @@ def outputCommand():
 window = tk.Tk()
 window.title("生成anki单词本")
 #点击确认按钮之后
-def conformButtonCommand():
+def confirmButtonCommand():
     temp = wordEntryWidget.get()
     wordEntryWidget.delete(0, len(temp))
     displayResultWidget.insert("end", en_to_zh(temp))
@@ -58,10 +58,10 @@ def conformButtonCommand():
 wordEntryWidget = tk.Entry(window)
 wordEntryWidget.pack()
 #单词确认按钮
-conformButton = tk.Button(window, 
-                          text = "conform", 
-                          command = conformButtonCommand)
-conformButton.pack()
+confirmButton = tk.Button(window, 
+                          text = "confirm", 
+                          command = confirmButtonCommand)
+confirmButton.pack()
 #显示结果控件
 displayResultWidget = tk.Text(window)
 displayResultWidget.pack()
