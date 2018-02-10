@@ -1,0 +1,2 @@
+# BingOnlineDictToAnkiWordList
+从在线必应词典爬取信息生成Anki可用的单词本
