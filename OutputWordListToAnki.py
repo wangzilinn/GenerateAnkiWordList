@@ -34,13 +34,13 @@ def en_to_zh(word):#英译中
     return returnString
 #点击导出按钮之后
 def outputCommand():
-    inputStr = displayResultControl.get("0.0", "end")  
+    inputStr = displayResultWidget.get("0.0", "end")  
     inputStr = inputStr.replace("\n", "\t")
     inputStr = inputStr.replace("\t-----------------\t", "\r\n")
     fo = codecs.open("C:\\Users\\78286\\Desktop\\foo.txt", "a+", "utf-8")
     fo.write(inputStr[0:-1])#去掉最后一个\t
     fo.close()
-    displayResultControl.delete("0.0", "end")#清空显示区
+    displayResultWidget.delete("0.0", "end")#清空显示区
     displayMessageWidget.config(text = "已导出")
     
      
@@ -48,23 +48,23 @@ window = tk.Tk()
 window.title("生成anki单词本")
 #点击确认按钮之后
 def conformButtonCommand():
-    temp = wordEntryControl.get()
-    wordEntryControl.delete(0, len(temp))
-    displayResultControl.insert("end", en_to_zh(temp))
-    displayResultControl.insert("end", "-----------------\n")
+    temp = wordEntryWidget.get()
+    wordEntryWidget.delete(0, len(temp))
+    displayResultWidget.insert("end", en_to_zh(temp))
+    displayResultWidget.insert("end", "-----------------\n")
     displayMessageWidget.config(text = "已添加新单词")
 
 #输入控件
-wordEntryControl = tk.Entry(window)
-wordEntryControl.pack()
+wordEntryWidget = tk.Entry(window)
+wordEntryWidget.pack()
 #单词确认按钮
 conformButton = tk.Button(window, 
                           text = "conform", 
                           command = conformButtonCommand)
 conformButton.pack()
 #显示结果控件
-displayResultControl = tk.Text(window)
-displayResultControl.pack()
+displayResultWidget = tk.Text(window)
+displayResultWidget.pack()
 #导出确认按钮
 outputControlButton = tk.Button(window, 
                                 text = "output", 
