@@ -1,6 +1,9 @@
 # BingOnlineDictToAnkiWordList
 从在线必应词典爬取信息生成Anki可用的单词本
+#### 第一版示例:
 ![image](https://github.com/wangzilinn/BingOnlineDictToAnkiWordList/blob/master/example.gif)
+#### 第二版示例
+![image](https://github.com/wangzilinn/BingOnlineDictToAnkiWordList/blob/master/example2.0.gif)
 ### 最近这几天每天都在背单词，发现了按照记忆曲线复习的单词本anki，觉得简直是神器，几天下来背单词的效率提高了不少。
 ### 但是每天把单词添加到单词本要花费不少时间，其典型过程是：
 1. 找到要背的单词
