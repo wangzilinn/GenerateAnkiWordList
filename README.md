@@ -1,5 +1,5 @@
 # BingOnlineDictToAnkiWordList
-从在线必应词典爬取信息生成Anki可用的单词本
+从在线必应词典/爱词霸/youdict爬取信息生成Anki可用的单词本
 #### 第一版示例:
 ![image](https://github.com/wangzilinn/BingOnlineDictToAnkiWordList/blob/master/example.gif)
 #### 第二版示例
