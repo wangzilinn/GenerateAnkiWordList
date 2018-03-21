@@ -1,7 +1,7 @@
 # BingOnlineDictToAnkiWordList
 从在线必应词典/爱词霸/youdict爬取信息生成Anki可用的单词本
-#### 第一版示例:
-![image](https://github.com/wangzilinn/BingOnlineDictToAnkiWordList/blob/master/example.gif)
+#### 第三版示例:
+![image](https://github.com/wangzilinn/BingOnlineDictToAnkiWordList/blob/master/example3.0.gif)
 #### 第二版示例
 ![image](https://github.com/wangzilinn/BingOnlineDictToAnkiWordList/blob/master/example2.0.gif)
 ### 最近这几天每天都在背单词，发现了按照记忆曲线复习的单词本anki，觉得简直是神器，几天下来背单词的效率提高了不少。
@@ -37,3 +37,5 @@
 ### 随笔
 从产生需求到第二版,这两天一边写一边谷歌扫盲,花了大概5个小时,这种隔一年半载再拿起一种语言的感觉很奇妙,写惯了c/c++再写python有种带着学步车走路的感觉.
 代码都是起床没睡醒和晚上睡不着的时候写的,命名,单词拼写,程序结构难免有不合理的地方,本着能用就行,适当拓展的原则(自用软件,给老板干活另说),这个库就先这样吧,以后除非网站都挂掉,不会再更新了
+上面的FLAG说倒就倒，在实际使用中发现了在很多中情况下的闪退现象，已经修复
+添加了查看该单词属于那个考试范围的label
