@@ -1,5 +1,8 @@
 # BingOnlineDictToAnkiWordList
 从在线必应词典/爱词霸/youdict爬取信息生成Anki可用的单词本
+#### 第四版示例:
+舍弃了VS，这版使用pycharm写的
+![image](https://github.com/wangzilinn/BingOnlineDictToAnkiWordList/blob/master/example4.0.gif)
 #### 第三版示例:
 ![image](https://github.com/wangzilinn/BingOnlineDictToAnkiWordList/blob/master/example3.0.gif)
 #### 第二版示例
