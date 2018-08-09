@@ -144,24 +144,25 @@ def display_input_interface_command():
         activate_input_youdao_word_book_feature = False
         input_youdao_word_book_button.config(text="Off")
         youdao_word_list_widget.place_forget()  # 隐藏单词列表控件
+        import_word_button.place_forget()  # 隐藏确认导入按钮
         window.geometry("445x500")  # 恢复原来的窗口大小
     else:
         activate_input_youdao_word_book_feature = True
         input_youdao_word_book_button.config(text="On")
         window.geometry("605x500")  # 扩大窗口以显示列表控件
         youdao_word_list_widget.place(x=450, y=80, anchor='nw')  # 放置列表控件
+        import_word_button.place(x=480, y=400, anchor='nw')  # 放置确认导入按钮
         if youdao_word_list_widget.size() == 0:  # 当原来列表不为空时再导入文件
             try:
                 file = tk.filedialog.askopenfilename(filetypes=[("单词本文件", ".txt")])
                 with open(file, 'r', encoding="utf-8") as f1:  # 打开文件
                     txt_string = f1.read()  # 读入文件内容到str1中
-                word_list = []
-                word_list = txt_string.split("\n")
-                for item in word_list:
-                    if re.match(r'\d, ', item):  # 提取出有单词的一项
+                for item in txt_string.split("\n"):
+                    if re.match(r'\d*, ', item):  # 提取出有单词的一项（这一行第一个是数字之后接着逗号之后是一个空格）
                         item = item.split(" ")[1]  # 只要每项中的单词而不要序号和音标
                         youdao_word_list_widget.insert('end', item)  # 装入列表
             except:
+                display_message_widget.config(text="解析文件时发生意外，检查单词本是否为UTF8编码")
                 display_input_interface_command()  # 如果发生意外再次调用该函数关掉该功能
 
 
@@ -236,11 +237,11 @@ display_result_widget.place(x=10, y=80, anchor='nw')
 output_control_button = tk.Button(window,
                                   text="output",
                                   command=output_command)
-output_control_button.place(x=250, y=400, anchor='nw')
+output_control_button.place(x=10, y=405, anchor='nw')
 # 显示状态
-display_message_widget = tk.Message(window,
+display_message_widget = tk.Label(window,
                                     text="未开始")
-display_message_widget.place(x=250, y=420, anchor='nw')
+display_message_widget.place(x=10, y=440, anchor='nw')
 # 导入有道单词本控件
 input_youdao_word_book_label = tk.Label(text="Import youdao word book：")
 input_youdao_word_book_button = tk.Button(window, text="Off",
@@ -252,7 +253,7 @@ youdao_word_list_widget = tk.Listbox(window, height=19)
 # 将分析好的有道单词进行加工的按钮
 import_word_button = tk.Button(window, text="confirm",
                                command=import_youdao_word_command)
-import_word_button.place(x=480, y=400, anchor='nw')
+#import_word_button.place(x=480, y=400, anchor='nw')
 # 各种label:
 source_choice_label = tk.Label(text="choice source :")
 source_choice_label.place(x=20, y=2, anchor='nw')
